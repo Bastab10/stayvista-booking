@@ -1,0 +1,653 @@
+/* ================= BODY ================= */
+
+body{
+    font-family: "Ubuntu", sans-serif !important;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container{
+    flex: 1;
+}
+
+/* ================= NAVBAR ================= */
+
+.navbar{
+    height: 5rem;
+}
+
+.fa-compass{
+    color: #ff5733;
+    font-size: 2rem;
+}
+
+.nav-link{
+    color: #222222 !important;
+}
+
+/* ================= FOOTER ================= */
+
+.f-info-links{
+    text-decoration: none;
+    color: #222222;
+}
+
+.f-info-links a:hover{
+    text-decoration: underline;
+}
+
+.f-info-links,
+.f-info-socials,
+.f-info-brand{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.f-info-socials i{
+    font-size: 1.3rem;
+    margin-right: 1rem;
+}
+
+.f-info{
+    text-align: center;
+    height: 8rem;
+    background-color: #ebebeb;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ================= CARDS ================= */
+
+.listing-card{
+    border: none !important;
+    margin-bottom: 2rem;
+}
+
+.card-img-top{
+    border-radius: 1rem;
+    width: 100% !important;
+    object-fit: cover !important;
+}
+
+.card-body{
+    padding: 0 !important;
+}
+
+.card-text p{
+    font-weight: 400 !important;
+}
+
+.listing-links{
+    text-decoration: none;
+}
+
+/* Card hover effect */
+
+.card-img-overlay{
+    opacity: 0;
+}
+
+.card-img-overlay:hover{
+    opacity: 0.2;
+    background-color: white;
+}
+
+/* ================= FORMS ================= */
+
+.add-btn,
+.edit-btn{
+    background-color: #fe424d !important;
+    border: none !important;
+}
+
+/* ================= SHOW PAGE ================= */
+
+.show-img{
+    height: 30vh;
+}
+
+.btns{
+    display: flex;
+}
+
+.show-card{
+    padding-left: 0%;
+    padding-right: 0%;
+}
+
+footer{
+    margin-top: auto;
+}
+
+/* ================= SEARCH BAR ================= */
+
+.search-bar{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  background: #FFFFFF;
+  border: 2px solid #FFD6DE;
+  border-radius: 50px;
+
+  padding: 8px 10px;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+
+  box-shadow: 0 2px 8px rgba(255,56,92,0.15);
+  transition: all 0.3s ease;
+}
+
+.search-bar:hover{
+  box-shadow: 0 4px 12px rgba(255,56,92,0.25);
+  border-color: #FF385C;
+}
+
+.search-bar input{
+  border: none;
+  outline: none;
+  background: transparent;
+  flex: 1;
+  min-width: 0;
+
+  padding: 10px 15px;
+  border-radius: 50px;
+
+  font-size: 14px;
+  color: #333;
+}
+
+.search-bar input::placeholder{
+  color: #999;
+  font-size: 14px;
+}
+
+.search-bar button{
+  background: #FF385C;
+  color: white;
+  border: none;
+  border-radius: 50px;
+
+  padding: 8px 24px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.search-bar button:hover{
+  background: #E03150;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(255,56,92,0.3);
+}
+
+.search-bar button:active{
+  transform: translateY(0);
+}
+
+/* ======================================= */
+/* 📱 COMPREHENSIVE MOBILE RESPONSIVE CSS */
+/* ======================================= */
+
+/* 📱 MOBILE (max-width: 768px) */
+@media (max-width: 768px) {
+
+  /* ========== BODY & CONTAINER ========== */
+  body {
+    font-size: 14px;
+  }
+
+  .container {
+    padding: 0 15px;
+    max-width: 100%;
+  }
+
+  /* ========== NAVBAR ========== */
+  .navbar {
+    height: auto;
+    padding: 10px 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+
+  .navbar-brand {
+    font-size: 1.2rem;
+  }
+
+  .fa-compass {
+    font-size: 1.5rem;
+  }
+
+  /* Search bar mobile */
+  .search-bar {
+    width: 100%;
+    justify-content: space-between;
+    margin: 10px 0;
+    padding: 6px 10px;
+  }
+
+  .search-bar input {
+    width: 100%;
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+
+  .search-bar button {
+    padding: 8px 16px;
+    font-size: 12px;
+    white-space: nowrap;
+  }
+
+  /* Nav links mobile */
+  .navbar-nav {
+    text-align: center;
+    margin: 10px 0;
+  }
+
+  .navbar-nav .nav-link {
+    padding: 8px 15px;
+    font-size: 14px;
+  }
+
+  /* ========== CARDS & LISTINGS ========== */
+  .listing-card {
+    margin-bottom: 1rem;
+  }
+
+  .card-img-top {
+    height: 200px !important;
+  }
+
+  .card-body {
+    padding: 10px !important;
+  }
+
+  .card-text {
+    font-size: 13px !important;
+    line-height: 1.4;
+  }
+
+  /* Listing grid mobile */
+  .row-cols-lg-3,
+  .row-cols-md-2 {
+    --bs-columns: 1 !important;
+  }
+  
+  .row-cols-lg-3 > *,
+  .row-cols-md-2 > * {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+  }
+
+  /* ========== FILTERS ========== */
+  .filters {
+    justify-content: flex-start;
+    overflow-x: auto;
+    padding: 10px 0;
+    gap: 10px;
+  }
+
+  .filter {
+    margin-right: 1rem;
+    margin-top: 1rem;
+    min-width: 60px;
+  }
+
+  .filter i {
+    font-size: 1.2rem;
+  }
+
+  .filter p {
+    font-size: 0.7rem;
+    margin: 0;
+  }
+
+  .tax-toggle {
+    margin-left: 0;
+    margin-top: 1rem;
+    height: auto;
+    padding: 0.8rem;
+  }
+
+  /* ========== SHOW PAGE ========== */
+  .show-img {
+    height: 250px !important;
+  }
+
+  .show-card {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  /* Edit/Delete buttons mobile responsiveness */
+  .btns {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 12px !important;
+    margin: 20px 0 !important;
+    padding: 0 15px !important;
+  }
+
+  .btns .mobile-action-btn {
+    /* Pill-shaped outline design */
+    width: auto !important;
+    min-width: 120px !important;
+    max-width: 200px !important;
+    margin: 0 auto !important;
+    display: block !important;
+    text-align: center !important;
+    padding: 10px 24px !important;
+    font-size: 14px !important;
+    font-weight: 500 !important;
+    border-radius: 50px !important;
+    background: transparent !important;
+    border: 2px solid !important;
+    transition: all 0.3s ease !important;
+  }
+
+  .btns .mobile-action-btn.edit-btn {
+    border-color: #96b5e4 !important;
+    color: #81a9e6 !important;
+  }
+
+  .btns .mobile-action-btn.edit-btn:hover {
+    background: #acc5e9 !important;
+    color: white !important;
+    transform: translateY(-1px) !important;
+    box-shadow: 0 4px 12px rgba(13, 110, 253, 0.3) !important;
+  }
+
+  .btns .mobile-action-btn:not(.edit-btn) {
+    border-color: #dc3545 !important;
+    color: #dc3545 !important;
+  }
+
+  .btns .mobile-action-btn:not(.edit-btn):hover {
+    background: #dc3545 !important;
+    color: white !important;
+    transform: translateY(-1px) !important;
+    box-shadow: 0 4px 12px rgba(220, 53, 69, 0.3) !important;
+  }
+
+  /* Override Bootstrap grid classes on mobile */
+  @media (max-width: 768px) {
+    .btns .col-1,
+    .btns .offset-3,
+    .btns .offset-5 {
+      flex: 0 0 auto !important;
+      max-width: none !important;
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+    }
+  }
+
+  /* ========== FORMS ========== */
+  .form-control {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+
+  .form-label {
+    font-size: 14px;
+    margin-bottom: 5px;
+  }
+
+  .btn {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+
+  /* ========== REVIEWS ========== */
+  .starability-slot {
+    width: 100%;
+    max-width: 200px;
+  }
+
+  .review-card {
+    margin-bottom: 1rem;
+  }
+
+  /* ========== FOOTER ========== */
+  .f-info {
+    height: auto;
+    padding: 20px 10px;
+  }
+
+  .f-info-links,
+  .f-info-socials,
+  .f-info-brand {
+    margin-bottom: 15px;
+  }
+
+  .f-info-socials i {
+    font-size: 1.1rem;
+    margin-right: 0.8rem;
+  }
+
+  /* ========== MAP ========== */
+  #map {
+    height: 300px !important;
+    width: 100% !important;
+    margin: 10px 0;
+  }
+
+  /* ========== ALERTS & MESSAGES ========== */
+  .alert {
+    font-size: 13px;
+    padding: 10px 15px;
+    margin: 10px 0;
+  }
+
+  /* ========== PAGINATION ========== */
+  .pagination {
+    justify-content: center;
+    margin: 20px 0;
+  }
+
+  .page-link {
+    font-size: 12px;
+    padding: 6px 10px;
+  }
+
+  /* ========== SPACING ADJUSTMENTS ========== */
+  .mt-3 { margin-top: 1rem !important; }
+  .mt-4 { margin-top: 1.5rem !important; }
+  .mt-5 { margin-top: 2rem !important; }
+  .mb-3 { margin-bottom: 1rem !important; }
+  .mb-4 { margin-bottom: 1.5rem !important; }
+  .mb-5 { margin-bottom: 2rem !important; }
+  .p-3 { padding: 1rem !important; }
+  .p-4 { padding: 1.5rem !important; }
+  .p-5 { padding: 2rem !important; }
+
+  /* ========== OVERFLOW FIXES ========== */
+  .row {
+    margin: 0;
+  }
+
+  .col,
+  .col-6,
+  .col-8,
+  .col-12 {
+    padding: 0 8px;
+  }
+
+  /* ========== TEXT RESPONSIVE ========== */
+  h1 { font-size: 1.8rem; }
+  h2 { font-size: 1.5rem; }
+  h3 { font-size: 1.3rem; }
+  h4 { font-size: 1.1rem; }
+  h5 { font-size: 1rem; }
+  h6 { font-size: 0.9rem; }
+}
+
+/* 📱 TABLET (min-width: 769px and max-width: 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+
+  /* ========== NAVBAR ========== */
+  .search-bar input {
+    width: 180px;
+  }
+
+  /* ========== CARDS ========== */
+  .card-img-top {
+    height: 220px !important;
+  }
+
+  /* ========== SHOW PAGE ========== */
+  .show-img {
+    height: 280px !important;
+  }
+
+  /* ========== MAP ========== */
+  #map {
+    height: 350px !important;
+    width: 100% !important;
+  }
+
+  /* ========== FILTERS ========== */
+  .filters {
+    gap: 15px;
+  }
+
+  .filter {
+    margin-right: 1.5rem;
+  }
+}
+
+/* 📱 LARGE TABLET (min-width: 1025px and max-width: 1200px) */
+@media (min-width: 1025px) and (max-width: 1200px) {
+
+  /* ========== SEARCH BAR ========== */
+  .search-bar input {
+    width: 200px;
+  }
+
+  /* ========== MAP ========== */
+  #map {
+    width: 100% !important;
+  }
+}
+
+/* 📱 SMALL MOBILE (max-width: 480px) */
+@media (max-width: 480px) {
+
+  /* ========== NAVBAR ========== */
+  .navbar-brand {
+    font-size: 1rem;
+  }
+
+  .fa-compass {
+    font-size: 1.3rem;
+  }
+
+  .search-bar {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .search-bar input {
+    padding: 6px 10px;
+  }
+
+  .search-bar button {
+    padding: 6px 12px;
+    font-size: 11px;
+  }
+
+  /* ========== CARDS ========== */
+  .card-img-top {
+    height: 180px !important;
+  }
+
+  .card-text {
+    font-size: 12px !important;
+  }
+
+  /* ========== FILTERS ========== */
+  .filters {
+    gap: 8px;
+  }
+
+  .filter {
+    margin-right: 0.8rem;
+    min-width: 50px;
+  }
+
+  .filter i {
+    font-size: 1rem;
+  }
+
+  .filter p {
+    font-size: 0.6rem;
+  }
+
+  /* ========== SHOW PAGE ========== */
+  .show-img {
+    height: 200px !important;
+  }
+
+  /* ========== FORMS ========== */
+  .form-control {
+    font-size: 13px;
+    padding: 6px 10px;
+  }
+
+  .btn {
+    font-size: 13px;
+    padding: 6px 12px;
+  }
+
+  /* ========== FOOTER ========== */
+  .f-info {
+    padding: 15px 5px;
+  }
+
+  .f-info-socials i {
+    font-size: 1rem;
+    margin-right: 0.5rem;
+  }
+
+  /* ========== TEXT ========== */
+  h1 { font-size: 1.5rem; }
+  h2 { font-size: 1.3rem; }
+  h3 { font-size: 1.2rem; }
+  h4 { font-size: 1rem; }
+}
+
+/* 📱 LANDSCAPE MOBILE (max-height: 500px) */
+@media (max-height: 500px) and (orientation: landscape) {
+
+  /* ========== NAVBAR ========== */
+  .navbar {
+    padding: 5px 0;
+  }
+
+  .search-bar {
+    margin: 5px 0;
+    padding: 4px 8px;
+  }
+
+  /* ========== SHOW PAGE ========== */
+  .show-img {
+    height: 150px !important;
+  }
+
+  /* ========== MAP ========== */
+  #map {
+    height: 200px !important;
+  }
+}
+
+/* MAP */
+#map { 
+   height: 400px; 
+   width: 80vh;
+}
