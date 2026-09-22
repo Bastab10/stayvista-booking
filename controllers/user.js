@@ -1,7 +1,7 @@
 const User = require("../models/user.js");
 
 module.exports.renderSignupForm = (req, res) => {
-    res.render("users/signup");
+    res.render("users/signup", { currUser: req.user || null });
 };
 
 module.exports.signupRoute = async (req, res, next) => {
@@ -31,12 +31,16 @@ module.exports.signupRoute = async (req, res, next) => {
 };
 
 module.exports.rendeLoginForm = (req, res) => {
-    res.render("users/login");
+    res.render("users/login", { currUser: req.user || null });
 };
 
 module.exports.login = async (req, res) => {
+    console.log('Login controller called');
+    console.log('User in login controller:', req.user);
+    console.log('Session in login controller:', req.session);
     req.flash("success", "Welcome back to Wanderlust!");
     let redirectUrl = res.locals.redirectUrl || "/listings";
+    console.log('Redirecting to:', redirectUrl);
     res.redirect(redirectUrl);
 };
 

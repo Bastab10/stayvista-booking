@@ -55,7 +55,7 @@
 
     <!-- ================= EDIT / DELETE ================= -->
     <% if (
-        currUser &&
+        typeof currUser !== 'undefined' && currUser &&
         listing.owner &&
         listing.owner._id.equals(currUser._id)
     ) { %>
@@ -86,7 +86,7 @@
     <div class="col-8 offset-3 mt-3">
 
         <!-- ===== ADD REVIEW ===== -->
-        <% if (currUser) { %>
+        <% if (typeof currUser !== 'undefined' && currUser) { %>
             <hr />
 
             <h4>Leave a Review</h4>
@@ -232,7 +232,7 @@
 
                     <!-- DELETE REVIEW -->
                     <% if (
-                        currUser &&
+                        typeof currUser !== 'undefined' && currUser &&
                         review.author &&
                         review.author._id.equals(currUser._id)
                     ) { %>

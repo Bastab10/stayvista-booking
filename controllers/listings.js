@@ -48,11 +48,11 @@ module.exports.index =async (req, res) => {
       allListings = await Listing.find({}).sort({ createdAt: -1 });
     }
     
-    res.render("listings/index.ejs", { allListings, search: search || '' });
+    res.render("listings/index.ejs", { allListings, search: search || '', currUser: req.user || null });
   };
 
   module.exports.renderNewForm = (req, res) => {
-    res.render("listings/new.ejs");
+    res.render("listings/new.ejs", { currUser: req.user || null });
   };
 
   module.exports.showListing = async (req, res) => {
@@ -72,7 +72,8 @@ module.exports.index =async (req, res) => {
       console.log(listing);
       res.render("listings/show.ejs", { 
         listing, 
-        mapToken: process.env.MAP_TOKEN 
+        mapToken: process.env.MAP_TOKEN,
+        currUser: req.user || null
       });
     };
 
@@ -108,7 +109,7 @@ module.exports.index =async (req, res) => {
             req.flash("error", "Listing not found!");
             return res.redirect("/listings");
           }
-          res.render("listings/edit.ejs", { listing });
+          res.render("listings/edit.ejs", { listing, currUser: req.user || null });
         };
 
     module.exports.updateListing = async (req, res) => {

@@ -66,12 +66,12 @@ const sessionOptions = {
   store,
   secret: process.env.SECRET,
   resave: false,
-  saveUninitialized: false,
+  saveUninitialized: true,
   cookie: {
     expires: Date.now() + 1000 * 60 * 60 * 24 * 7,
     maxAge: 1000 * 60 * 60 * 24 * 7,
     httpOnly: true,
-    secure: process.env.NODE_ENV === "production",
+    secure: false,
     sameSite: 'lax',
   },
 };
@@ -88,18 +88,9 @@ passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
 app.use((req, res, next) => {
-  if (req.session && !req.session.regenerated) {
-    req.session.regenerated = true;
-    req.session.regenerate((err) => {
-      if (err) {
-        console.log("Session regeneration error:", err);
-      }
-    });
-  }
-  
   res.locals.success = req.flash("success");
   res.locals.error = req.flash("error");
-  res.locals.currUser = req.user;
+  res.locals.currUser = req.user || null;
   next();
 });
 
@@ -121,14 +112,16 @@ app.use("/", userRouter);
 app.use((req, res, next) => {
   const err = new Error("Page not found");
   err.statusCode = 404;
+  res.locals.currUser = req.user || null;
   next(err);
 });
 
 app.use((err, req, res, next) => {
   let { statusCode = 500, message = "Something went wrong" } = err;
-  res.status(statusCode).render("error.ejs", { message });
+  res.status(statusCode).render("error.ejs", { message, currUser: req.user || null });
 });
 
-app.listen(3000, () => {
-  console.log("Server is running on port 3000");
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
 });

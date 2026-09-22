@@ -11,11 +11,21 @@ router.route("/signup")
 
 router.route("/login")
     .get(userController.rendeLoginForm)
-    .post(saveRedirectUrl,
+    .post((req, res, next) => {
+        console.log('Login POST request received');
+        console.log('Request body:', req.body);
+        console.log('Session before auth:', req.session);
+        next();
+    }, saveRedirectUrl,
         passport.authenticate('local', {
             failureRedirect: '/login',
             failureFlash: true
-        }), userController.login);
+        }), (req, res, next) => {
+        console.log('Authentication successful');
+        console.log('User after auth:', req.user);
+        console.log('Session after auth:', req.session);
+        next();
+    }, userController.login);
 
 router.get("/logout", userController.logout);
 
